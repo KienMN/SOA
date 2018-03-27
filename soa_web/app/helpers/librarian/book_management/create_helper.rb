@@ -6,12 +6,12 @@ module Librarian::BookManagement::CreateHelper
   end
 
   def create_book
-    @new_book = Book.create(create_book_params)
+    @new_book = ::Book.create(create_book_params)
   end
 
   def generate_status
     @status = {
-      :code => Settings.code.success,
+      :code    => Settings.code.success,
       :message => "Thành công",
       :data    => @new_book
     }

@@ -16,7 +16,7 @@ namespace :sample_data do
           :pages        => book['pages'].to_s,
           :title        => book['title'],
           :publish_date => Time.new(book['year']),
-          :quantity     => book['quantity']
+          :quantity_in_stock => book['quantity']
         )
       end
     end

@@ -6,12 +6,12 @@ module Librarian::BookManagement::DestroyHelper
   end
 
   def destroy_book
-    Book.find_by(id: @params.id).destroy
+    ::Book.find_by(id: @params.id).destroy
   end
 
   def generate_status
     @status = {
-      :code => Settings.code.success,
+      :code    => Settings.code.success,
       :message => "Thành công"
     }
   end

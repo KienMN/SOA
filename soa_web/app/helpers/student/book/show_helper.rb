@@ -6,7 +6,7 @@ module Student::Book::ShowHelper
   end
 
   def get_book
-    @book = Book.find_by(id: @params[:id])
+    @book = ::Book.find_by(id: @params[:id])
   end
 
   def generate_status

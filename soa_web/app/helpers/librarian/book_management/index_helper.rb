@@ -6,7 +6,8 @@ module Librarian::BookManagement::IndexHelper
   end
 
   def get_book_list
-    @books = Book.all.paginate(page: @params[:page], per_page: Settings.per_page)
+    @books = ::Book.where("books.title like '%#{@params[:keyword]}%'")
+      .paginate(page: @params[:page], per_page: Settings.per_page)
   end
 
   def generate_status
@@ -14,9 +15,10 @@ module Librarian::BookManagement::IndexHelper
       :code    => Settings.code.success,
       :message => "Thành công",
       :data    => {
-        :page     => @params[:page],
-        :per_page => Settings.per_page,
-        :books    => @books
+        :page          => @params[:page],
+        :per_page      => Settings.per_page,
+        :books         => @books,
+        :total_entries => @books.total_entries
       },
     }
   end

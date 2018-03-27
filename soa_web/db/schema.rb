@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180321015210) do
     t.string "language"
     t.string "pages"
     t.string "title", null: false
-    t.datetime "year"
+    t.datetime "publish_date"
     t.integer "quantity_in_stock", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

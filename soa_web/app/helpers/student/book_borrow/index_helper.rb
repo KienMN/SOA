@@ -6,7 +6,7 @@ module Student::BookBorrow::IndexHelper
   end
 
   def get_borrowed_books
-    @books = Book.joins(:book_borrows).where("book_borrows.user_id = ?", @params[:user_id])
+    @books = ::Book.joins(:book_borrows).where("book_borrows.user_id = ?", @params[:user_id])
   end
 
   def generate_status

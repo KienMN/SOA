@@ -8,7 +8,7 @@ class BookBorrow < ApplicationRecord
   def checking_book_quantity
     book = Book.find_by(id: self.book_id)
     if book.quantity_in_stock <= 2
-      raise ActiveRecord::Rollback
+      raise Exception.new("Không được mượn khi số sách nhỏ hơn 2")
     end
   end
 end

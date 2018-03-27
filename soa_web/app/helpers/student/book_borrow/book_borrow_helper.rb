@@ -25,7 +25,7 @@ module Student::BookBorrow::BookBorrowHelper
   end
 
   class Create < Base
-    include Librarian::BookManagement::CreateHelper
+    include Student::BookBorrow::CreateHelper
 
     def initialize(options)
       super(options)
@@ -33,7 +33,7 @@ module Student::BookBorrow::BookBorrowHelper
   end
 
   class Index < Base
-    include Librarian::BookManagement::IndexHelper
+    include Student::BookBorrow::IndexHelper
 
     def initialize(options)
       super(options)
@@ -41,7 +41,7 @@ module Student::BookBorrow::BookBorrowHelper
   end
 
   class Destroy < Base
-    include Librarian::BookManagement::DestroyHelper
+    include Student::BookBorrow::DestroyHelper
 
     def initialize(options)
       super(options)

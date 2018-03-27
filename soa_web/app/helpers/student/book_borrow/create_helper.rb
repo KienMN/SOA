@@ -6,18 +6,26 @@ module Student::BookBorrow::CreateHelper
   end
 
   def create_book_borrow
-    BookBorrow.transaction do
-      BookBorrow.create(@params)
+    ::BookBorrow.transaction do
+      ::BookBorrow.create(create_book_borrow_params)
+      @book = ::Book.find_by(id: @params[:book_id])
 
-      Book.find_by(id: @params[:book_id])
-        .update_attributes(quantity_in_stock: @book.quantity_in_stock - 1)
+      @book.update_attributes(quantity_in_stock: @book.quantity_in_stock - 1)
     end
   end
 
   def generate_status
     @status = {
-      :code => Settings.code.success,
-      :message => "Thành công"
+      :code    => Settings.code.success,
+      :message => "Thành công",
+      :date    => {
+        :book => @book
+      }
     }
+  end
+
+  private
+  def create_book_borrow_params
+    @params.permit(:user_id, :book_id)
   end
 end

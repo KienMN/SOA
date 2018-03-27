@@ -6,10 +6,10 @@ module Student::BookBorrow::DestroyHelper
   end
 
   def destroy_book_borrow
-    BookBorrow.transaction do
-      BookBorrow.find_by(id: @params[:id]).destroy
+    ::BookBorrow.transaction do
+      ::BookBorrow.find_by(id: @params[:id]).destroy
 
-      Book.find_by(id: @params[:book_id])
+      ::Book.find_by(id: @params[:book_id])
         .update_attributes(quantity_in_stock: @book.quantity_in_stock + 1)
     end
   end
