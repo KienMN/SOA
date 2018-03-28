@@ -5,8 +5,8 @@ class Jumbotron extends Component {
 		return(
 			<div className="jumbotron">
 				<div className="container text-center">
-				    <h1>Thư viện</h1>      
-				    <p>Quản lý mượn trả sách</p>
+					<h1>Thư viện</h1>      
+					<p>Quản lý mượn trả sách</p>
 				</div>
 			</div>
 		)

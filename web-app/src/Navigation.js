@@ -30,38 +30,37 @@ class Navigation extends Component {
 		this.setState({
 			searchKeyWord: event.target.value
 		})
-		
 	}
 
 	// Rendering navigation
 	render() {
 		return(
-	        <nav className="navbar navbar-inverse">
+			<nav className="navbar navbar-inverse">
 				<div className="container-fluid">
-		    		<div className="navbar-header">
-		    			<button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		    				<span className="icon-bar"></span>
-		    				<span className="icon-bar"></span>
-						    <span className="icon-bar"></span>                        
-		    			</button>
-		    		<a className="navbar-brand" href={homeLink}>Library</a>
-		    		</div>
-		    		<div className="collapse navbar-collapse" id="myNavbar">
-					    <ul className="nav navbar-nav">
-						    <li className="active"><a href={homeLink}>Trang chủ</a></li>
-					    </ul>
-					    <form className="navbar-form navbar-right" role="search" action='#'>
-					        <div className="form-group input-group">
-					        	<input type="text" className="form-control" placeholder="Tìm kiếm tên sách..." onKeyUp={this.handleOnKeyUp} onChange={this.onTextChange}/>
-					        	<span className="input-group-btn">
-					            	<button className="btn btn-default" type="button" onClick={this.handleSearch}>
-					            		<span className="glyphicon glyphicon-search"></span>
-					            	</button>
-					        	</span>
-					        </div>
-					    </form>
-				    </div>
-			    </div>
+					<div className="navbar-header">
+						<button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span className="icon-bar"></span>
+							<span className="icon-bar"></span>
+							<span className="icon-bar"></span>                        
+						</button>
+						<a className="navbar-brand" href={homeLink}>Library</a>
+					</div>
+					<div className="collapse navbar-collapse" id="myNavbar">
+						<ul className="nav navbar-nav">
+							<li className="active"><a href={homeLink}>Trang chủ</a></li>
+						</ul>
+						<form className="navbar-form navbar-right" role="search" action='#'>
+							<div className="form-group input-group">
+								<input type="text" className="form-control" placeholder="Tìm kiếm tên sách..." onKeyUp={this.handleOnKeyUp} onChange={this.onTextChange}/>
+								<span className="input-group-btn">
+									<button className="btn btn-default" type="button" onClick={this.handleSearch}>
+										<span className="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
 			</nav>
 		)
 	}
